@@ -52,7 +52,15 @@
       navigator.clipboard.writeText(address).then(function () {
         copyStatus.textContent = 'Copied to your clipboard.';
       }, function () {
-        copyStatus.textContent = 'Couldn’t copy. Select the address above instead.';
+        // Select the address so the visitor can copy it themselves
+        var email = document.querySelector('.contact__email');
+        if (email && window.getSelection) {
+          var range = document.createRange();
+          range.selectNodeContents(email);
+          window.getSelection().removeAllRanges();
+          window.getSelection().addRange(range);
+        }
+        copyStatus.textContent = 'Couldn’t copy automatically. The address is selected, so you can copy it.';
       });
       clearTimeout(resetTimer);
       resetTimer = setTimeout(function () { copyStatus.textContent = ''; }, 4000);

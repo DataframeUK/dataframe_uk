@@ -52,6 +52,7 @@
 
   /* Logo colours stay the same in both themes */
   --logo-ink: #0E2841;
+  --logo-frame: #0E2841;
   --logo-cell: #DAE9F8;
 
   /* One colour per service, dark to light: navy, petrol, mid blue, sky, pale sky */
@@ -104,6 +105,7 @@
     --swatch-ring: rgba(230, 238, 247, .3);
     --v1: #2E5A86;
     --v2: #1F7192;
+    --logo-frame: #1F7192;
     --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 28px 56px -32px rgba(0, 0, 0, .8);
     --header-bg: rgba(7, 17, 29, .86);
     color-scheme: dark;
@@ -127,6 +129,7 @@
   --swatch-ring: rgba(230, 238, 247, .3);
   --v1: #2E5A86;
   --v2: #1F7192;
+  --logo-frame: #1F7192;
   --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 28px 56px -32px rgba(0, 0, 0, .8);
   --header-bg: rgba(7, 17, 29, .86);
   color-scheme: dark;
@@ -977,7 +980,14 @@ a { color: inherit; }
   font-size: .9375rem;
   color: var(--ink-muted);
 }
-.contact__copied:empty { display: none; }
+/* Stays in the accessibility tree while empty, so screen readers announce the message */
+.contact__copied:empty {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
 .contact__record tbody th {
   width: 38%;
   font-family: var(--font-mono);
@@ -1010,8 +1020,15 @@ a { color: inherit; }
 }
 .site-footer__top .brand { margin-right: 0; }
 .site-footer__tagline { color: var(--ink-muted); margin-right: auto; }
-.site-footer__nav ul { display: flex; flex-wrap: wrap; gap: 8px 24px; }
-.site-footer__nav a { color: var(--ink-muted); text-decoration: none; font-size: .9375rem; }
+.site-footer__nav ul { display: flex; flex-wrap: wrap; gap: 0 24px; }
+.site-footer__nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-size: .9375rem;
+}
 .site-footer__nav a:hover { color: var(--ink); }
 .site-footer__legal {
   padding-top: 20px;

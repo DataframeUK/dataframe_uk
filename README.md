@@ -16,7 +16,7 @@ Website for Dataframe Limited. Plain HTML, CSS and JavaScript with no build step
 | `docs/assets/fonts/` | Self-hosted fonts (SIL Open Font Licence, licence files included) |
 | `docs/CNAME` | Custom domain for GitHub Pages (`dataframe.uk`) |
 | `docs/assets/img/logo.svg` | The full Dataframe logo (mark above the wordmark) |
-| `design/` | Sources for the social share image and app icon |
+| `design/` | Sources for the social share image, app icon and `favicon.ico` |
 
 ## Preview locally
 
@@ -81,7 +81,7 @@ When both records are in place, GitHub sends `www.dataframe.uk` to `dataframe.uk
 
 ## Brand
 
-**Logo.** `docs/assets/img/logo.svg` is the full logo, rebuilt as a vector from the original artwork. The wordmark is DejaVu Sans, converted to outlines. The header and footer use a side-by-side version of the mark and wordmark, defined once at the top of each page as `<symbol id="df-logo">`. `favicon.svg` is the mark on its own.
+**Logo.** `docs/assets/img/logo.svg` is the full logo, rebuilt as a vector from the original artwork. The wordmark is DejaVu Sans, converted to outlines. The header and footer use a side-by-side version of the mark and wordmark, defined once at the top of each page as `<symbol id="df-logo">`. `favicon.svg` is the mark on its own. `docs/favicon.ico` is the same mark at 16, 32 and 48 px, for browsers and crawlers that ask for `/favicon.ico`. In dark mode the logo's frame lightens to petrol blue (`#1F7192`) so it stays visible against the dark background; the centre dots stay navy.
 
 **Colours**, taken from the logo and the Dataframe decks:
 
@@ -99,3 +99,5 @@ All colours are set as tokens at the top of `docs/assets/css/styles.css`, with a
 ## Updating the share image and icon
 
 `docs/assets/img/og-image.png` (1200 × 630, used when the link is shared on LinkedIn, Slack and so on) and `docs/assets/img/apple-touch-icon.png` (180 × 180) are rendered from `design/og-image.html` and `design/icon.html` (which shows `favicon.svg` on white). Serve the repository root (`python3 -m http.server 8000`), open each file at its stated size, and take a screenshot (Chrome DevTools → device toolbar → "Capture screenshot"). Scale the icon down to 180 × 180.
+
+If the mark changes, regenerate `favicon.ico` with `python3 design/make-favicon-ico.py docs/favicon.ico`.
