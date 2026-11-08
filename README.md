@@ -6,7 +6,7 @@ Website for Dataframe Limited. Plain HTML, CSS and JavaScript with no build step
 
 | Path | Contents |
 |------|----------|
-| `content/website-copy.md` | Approved website copy (the source for all page text) |
+| `content/website-copy.md` | Approved website copy (the source for all page text). Kept on your computer only: it contains internal notes, so `.gitignore` keeps it out of this public repository. Back it up separately. |
 | `docs/` | The published site: everything in here goes live |
 | `docs/index.html` | Home page (all sections) |
 | `docs/privacy.html` | Privacy Policy |
