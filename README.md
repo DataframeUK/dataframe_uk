@@ -15,6 +15,7 @@ Website for Dataframe Limited. Plain HTML, CSS and JavaScript with no build step
 | `docs/assets/js/main.js` | Mobile menu, clickable table rows, "Copy address" button |
 | `docs/assets/fonts/` | Self-hosted fonts (SIL Open Font Licence, licence files included) |
 | `docs/CNAME` | Custom domain for GitHub Pages (`dataframe.uk`) |
+| `docs/assets/img/logo.svg` | The full Dataframe logo (mark above the wordmark) |
 | `design/` | Sources for the social share image and app icon |
 
 ## Preview locally
@@ -32,7 +33,7 @@ The site has no forms and collects no information. Visitors contact you by email
 1. **Email.** Check that `inquiries@dataframe.uk` exists in Microsoft 365 (the domain's mail is hosted there) and receives mail.
 2. **LinkedIn.** Uncomment the LinkedIn row in the contact card in `index.html` and add the URL.
 3. **Privacy Policy.** Check it against how you actually handle email, in particular the 24-month retention period.
-4. **Claims to confirm:** "Vendor-neutral" / "Independent advice", the five ways to work with you, the "within one working day" reply promise, and the FAQ answer on who owns the work.
+4. **Claims to confirm:** "Vendor-neutral" / "Independent advice", the five ways to work with you, the "within one working day" reply promise, and the "You own it" point under Why Dataframe.
 
 Company details (number 13975651, England and Wales, registered office) come from the [Companies House record](https://find-and-update.company-information.service.gov.uk/company/13975651). They appear in the footer of every page, the contact card and the Privacy Policy. If the registered office moves, search for `Great Portland` and update each one.
 
@@ -78,6 +79,23 @@ dig dataframe.uk +noall +answer
 
 When both records are in place, GitHub sends `www.dataframe.uk` to `dataframe.uk` automatically.
 
+## Brand
+
+**Logo.** `docs/assets/img/logo.svg` is the full logo, rebuilt as a vector from the original artwork. The wordmark is DejaVu Sans, converted to outlines. The header and footer use a side-by-side version of the mark and wordmark, defined once at the top of each page as `<symbol id="df-logo">`. `favicon.svg` is the mark on its own.
+
+**Colours**, taken from the logo and the Dataframe decks:
+
+| Colour | Hex | Used for |
+|--------|-----|----------|
+| Navy (logo) | `#0E2841` | Text, buttons, the contact section, logo |
+| Light blue (logo) | `#DAE9F8` | Logo cells |
+| Slate | `#44546A` | Secondary text |
+| Petrol | `#104861` | Links and button hover |
+| Sky | `#83CCEB` | The highlighted "selected cell", accents |
+| Pale sky | `#C0E6F5` | Lightest service colour |
+
+All colours are set as tokens at the top of `docs/assets/css/styles.css`, with a matching dark theme.
+
 ## Updating the share image and icon
 
-`docs/assets/img/og-image.png` (1200 × 630, used when the link is shared on LinkedIn, Slack and so on) and `docs/assets/img/apple-touch-icon.png` (180 × 180) are rendered from `design/og-image.html` and `design/icon.html`. Serve the repository root (`python3 -m http.server 8000`), open each file at its stated size, and take a screenshot (Chrome DevTools → device toolbar → "Capture screenshot"). Scale the icon down to 180 × 180.
+`docs/assets/img/og-image.png` (1200 × 630, used when the link is shared on LinkedIn, Slack and so on) and `docs/assets/img/apple-touch-icon.png` (180 × 180) are rendered from `design/og-image.html` and `design/icon.html` (which shows `favicon.svg` on white). Serve the repository root (`python3 -m http.server 8000`), open each file at its stated size, and take a screenshot (Chrome DevTools → device toolbar → "Capture screenshot"). Scale the icon down to 180 × 180.

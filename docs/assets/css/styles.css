@@ -1,7 +1,8 @@
 /* Dataframe — dataframe.uk
    Layout: a 12-column grid made visible. Faint column rules sit behind the hero,
    and content snaps to columns like cells in a table. One bold device recurs:
-   the selected cell (viridis yellow fill, ink outline, fill handle). */
+   the selected cell (sky-blue fill, navy outline, fill handle), echoing the logo's
+   light cells with navy centres. Colours come from the Dataframe logo and decks. */
 
 @font-face {
   font-family: "Bricolage Grotesque";
@@ -28,32 +29,37 @@
 }
 
 :root {
-  /* Colour: cool paper, blue-green ink, accents drawn from the viridis colour map */
-  --paper: #F2F5F4;
+  /* Colour: navy and light blue from the logo; slate, petrol and sky from the decks */
+  --paper: #F4F7FB;
   --surface: #FFFFFF;
-  --stripe: #F6F8F7;
-  --ink: #0E1B1F;
-  --ink-muted: #4C5C61;
-  --rule: #D5DEDC;
-  --rule-strong: #A6B7B6;
-  --grid: #E0E8E6;
-  --accent: #17706C;
-  --on-accent: #F2F5F4;
-  --highlight: #FDE725;
-  --on-highlight: #0E1B1F;
-  --deep: #0C2B2D;
-  --on-deep: #E8F1EF;
-  --on-deep-muted: #A3BEBB;
-  --deep-rule: #23484A;
-  --shadow: 0 1px 0 rgba(14, 27, 31, .04), 0 28px 56px -36px rgba(14, 27, 31, .45);
-  --header-bg: rgba(242, 245, 244, .86);
+  --stripe: #F6F9FC;
+  --ink: #0E2841;
+  --ink-muted: #44546A;
+  --rule: #D9E1EB;
+  --rule-strong: #AEBBCB;
+  --grid: #E2E9F2;
+  --accent: #104861;
+  --on-accent: #FFFFFF;
+  --highlight: #83CCEB;
+  --on-highlight: #0E2841;
+  --deep: #0E2841;
+  --on-deep: #EEF4FB;
+  --on-deep-muted: #A9BCD2;
+  --deep-rule: #263F5C;
+  --swatch-ring: rgba(14, 40, 65, .18);
+  --shadow: 0 1px 0 rgba(14, 40, 65, .04), 0 28px 56px -36px rgba(14, 40, 65, .4);
+  --header-bg: rgba(244, 247, 251, .88);
 
-  /* Viridis stops, one per service */
-  --v1: #414487;
-  --v2: #2A788E;
-  --v3: #22A884;
-  --v4: #7AD151;
-  --v5: #FDE725;
+  /* Logo colours stay the same in both themes */
+  --logo-ink: #0E2841;
+  --logo-cell: #DAE9F8;
+
+  /* One colour per service, dark to light: navy, petrol, mid blue, sky, pale sky */
+  --v1: #0E2841;
+  --v2: #104861;
+  --v3: #3F8DB3;
+  --v4: #83CCEB;
+  --v5: #C0E6F5;
 
   /* Type */
   --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
@@ -81,42 +87,48 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #0C1416;
-    --surface: #111C1F;
-    --stripe: #0F181A;
-    --ink: #E4EDEB;
-    --ink-muted: #9AAEAE;
-    --rule: #22343A;
-    --rule-strong: #3D555C;
-    --grid: #142226;
-    --accent: #3CC09C;
-    --on-accent: #0C1416;
-    --deep: #0A2326;
-    --on-deep: #E4EDEB;
-    --on-deep-muted: #93B1AE;
-    --deep-rule: #1D4044;
+    --paper: #07111D;
+    --surface: #0C1A2A;
+    --stripe: #0A1624;
+    --ink: #E6EEF7;
+    --ink-muted: #A3B4C8;
+    --rule: #1A2C41;
+    --rule-strong: #2F4761;
+    --grid: #0F1E30;
+    --accent: #83CCEB;
+    --on-accent: #0E2841;
+    --deep: #0E2841;
+    --on-deep: #EEF4FB;
+    --on-deep-muted: #A3B8CF;
+    --deep-rule: #233D5B;
+    --swatch-ring: rgba(230, 238, 247, .3);
+    --v1: #2E5A86;
+    --v2: #1F7192;
     --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 28px 56px -32px rgba(0, 0, 0, .8);
-    --header-bg: rgba(12, 20, 22, .86);
+    --header-bg: rgba(7, 17, 29, .86);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --paper: #0C1416;
-  --surface: #111C1F;
-  --stripe: #0F181A;
-  --ink: #E4EDEB;
-  --ink-muted: #9AAEAE;
-  --rule: #22343A;
-  --rule-strong: #3D555C;
-  --grid: #142226;
-  --accent: #3CC09C;
-  --on-accent: #0C1416;
-  --deep: #0A2326;
-  --on-deep: #E4EDEB;
-  --on-deep-muted: #93B1AE;
-  --deep-rule: #1D4044;
+  --paper: #07111D;
+  --surface: #0C1A2A;
+  --stripe: #0A1624;
+  --ink: #E6EEF7;
+  --ink-muted: #A3B4C8;
+  --rule: #1A2C41;
+  --rule-strong: #2F4761;
+  --grid: #0F1E30;
+  --accent: #83CCEB;
+  --on-accent: #0E2841;
+  --deep: #0E2841;
+  --on-deep: #EEF4FB;
+  --on-deep-muted: #A3B8CF;
+  --deep-rule: #233D5B;
+  --swatch-ring: rgba(230, 238, 247, .3);
+  --v1: #2E5A86;
+  --v2: #1F7192;
   --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 28px 56px -32px rgba(0, 0, 0, .8);
-  --header-bg: rgba(12, 20, 22, .86);
+  --header-bg: rgba(7, 17, 29, .86);
   color-scheme: dark;
 }
 
@@ -299,16 +311,7 @@ a { color: inherit; }
   color: var(--ink);
   text-decoration: none;
 }
-.brand__mark { flex: none; display: block; }
-.brand__cell { fill: var(--highlight); }
-.brand__name {
-  font-family: var(--font-display);
-  font-size: 1.3125rem;
-  font-weight: 700;
-  font-stretch: 92%;
-  letter-spacing: -.02em;
-  line-height: 1;
-}
+.brand__logo { flex: none; display: block; }
 
 .site-nav ul { display: flex; gap: 28px; }
 .site-nav a {
@@ -375,8 +378,14 @@ a { color: inherit; }
   html:not(.js) .site-nav { order: 3; width: 100%; overflow-x: auto; }
   html:not(.js) .site-nav ul { gap: 20px; }
 }
+.site-header__cta { white-space: nowrap; }
+/* "Get in touch" is the only route to Contact in the header, so it never hides; the logo shrinks instead */
+@media (max-width: 600px) {
+  .site-header__inner { gap: 14px; }
+  .site-header .brand__logo { width: 118px; height: 28px; }
+}
 @media (max-width: 380px) {
-  .site-header__cta { display: none; }
+  .site-header .brand__logo { width: 101px; height: 24px; }
 }
 
 /* ---------- Hero ---------- */
@@ -553,7 +562,7 @@ a { color: inherit; }
   width: .72em;
   height: .72em;
   background: var(--swatch, var(--accent));
-  box-shadow: inset 0 0 0 1px rgba(14, 27, 31, .18);
+  box-shadow: inset 0 0 0 1px var(--swatch-ring);
 }
 
 /* ---------- Proof strip ---------- */
@@ -892,25 +901,6 @@ a { color: inherit; }
 }
 .cells p { color: var(--ink-muted); }
 
-/* ---------- FAQ ---------- */
-
-.faq { border-top: 1px solid var(--rule-strong); }
-.faq__item {
-  display: grid;
-  gap: .6rem;
-  padding-block: 1.5rem;
-  border-bottom: 1px solid var(--rule);
-}
-.faq dt {
-  font-family: var(--font-display);
-  font-size: var(--step-1);
-  font-weight: 640;
-  font-stretch: 94%;
-  line-height: 1.25;
-  letter-spacing: -.01em;
-}
-.faq dd { color: var(--ink-muted); max-width: 64ch; }
-
 /* ---------- Contact ---------- */
 
 .section--deep {
@@ -1019,7 +1009,6 @@ a { color: inherit; }
   gap: 16px 32px;
 }
 .site-footer__top .brand { margin-right: 0; }
-.site-footer__top .brand__name { font-size: 1.125rem; }
 .site-footer__tagline { color: var(--ink-muted); margin-right: auto; }
 .site-footer__nav ul { display: flex; flex-wrap: wrap; gap: 8px 24px; }
 .site-footer__nav a { color: var(--ink-muted); text-decoration: none; font-size: .9375rem; }
