@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style>
+    .frame { stroke: #0E1B1F; }
+    .bg { fill: #F2F5F4; }
+    @media (prefers-color-scheme: dark) {
+      .frame { stroke: #E4EDEB; }
+      .bg { fill: #0C1416; }
+    }
+  </style>
+  <rect class="bg" x="1" y="1" width="22" height="22" rx="3"/>
+  <rect x="8.5" y="8.5" width="14" height="7" fill="#FDE725"/>
+  <rect class="frame" x="1.5" y="1.5" width="21" height="21" rx="2.5" fill="none" stroke-width="2"/>
+  <path class="frame" d="M1.5 8.5h21M1.5 15.5h21M8.5 1.5v21" fill="none" stroke-width="2"/>
+</svg>
