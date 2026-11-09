@@ -843,6 +843,13 @@ a { color: inherit; }
 .rows--compact { border-top: 0; }
 .rows--compact .rows__item { padding-block: .9rem; }
 .rows--compact dt { font-size: 1.0625rem; }
+.partner__link { margin-top: .6rem; }
+.partner__link a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+}
 
 /* ---------- How we work ---------- */
 
