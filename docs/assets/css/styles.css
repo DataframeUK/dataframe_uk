@@ -535,14 +535,6 @@ a { color: inherit; }
 .df--nav tbody tr { cursor: pointer; transition: background-color .15s ease; }
 .df--nav tbody tr:hover { background: color-mix(in srgb, var(--highlight) 22%, var(--surface)); }
 
-.df__shape {
-  padding: .7rem 1rem;
-  border-top: 1px solid var(--rule-strong);
-  font-family: var(--font-mono);
-  font-size: var(--step--1);
-  color: var(--ink-muted);
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .df--live tbody tr {
     animation: row-scan 1s ease-out;
